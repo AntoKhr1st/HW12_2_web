@@ -21,7 +21,7 @@ def pic_saver(picture):
     '''сохраняет фоточку в папку uploads/images'''
     filename = picture.filename
     path = f'/uploads/images/{filename}'
-    picture.save('.'+path)
+    picture.save('.' + path)
     return path
 
 
@@ -30,5 +30,5 @@ def json_dumper(post):
     data = post_from_json()
     data.append(post)
     with open('posts.json', 'w', encoding='utf-8') as file:
-        json.dump(data, file,ensure_ascii=False)
+        json.dump(data, file, ensure_ascii=False)
     return post
