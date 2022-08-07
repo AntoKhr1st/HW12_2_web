@@ -15,6 +15,7 @@ def main_page():
 
 @bp_main.route('/search/')
 def search_page():
+    # запрос значения query параметра из формы (название переменной из html)
     text_to_search = request.args.get('s')
     logging.info('выполнение поиска')
     try:

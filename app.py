@@ -10,6 +10,7 @@ POST_PATH = "posts.json"
 UPLOAD_FOLDER = "uploads/images"
 
 app = Flask(__name__)
+#регистрирует блупринт
 app.register_blueprint(bp_main)
 app.register_blueprint(bp_loader)
 # логирование

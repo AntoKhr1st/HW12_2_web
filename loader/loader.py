@@ -5,6 +5,7 @@ from flask import Blueprint, render_template, request
 
 from utils import pic_saver, json_dumper
 
+# создание блупринта
 bp_loader = Blueprint('bp_loader', __name__, template_folder='templates')
 
 
@@ -17,8 +18,10 @@ def load_post_page():
 def download_post_page():
     picture = request.files.get('picture')
     content = request.form.get("content")
+    # проверка на наличие контента в форме
     if not picture or not content:
         return "нет коммента или картинки"
+    # проверка на расширение картинки
     if picture.filename.split('.')[-1] not in ['jpeg', 'png']:
         logging.error('неверный формат файла')
         return "неверный формат файла"
